@@ -17,6 +17,7 @@ import static org.easymock.EasyMock.expect;
 
 import org.eclipse.jgit.lib.Config;
 
+import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.server.config.FactoryModule;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Guice;
@@ -104,6 +105,8 @@ public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
       serverConfig = createMock(Config.class);
       bind(Config.class).annotatedWith(GerritServerConfig.class)
           .toInstance(serverConfig);
+      bind(String.class).annotatedWith(PluginName.class)
+          .toInstance("its-bugzilla");
     }
   }
 }
