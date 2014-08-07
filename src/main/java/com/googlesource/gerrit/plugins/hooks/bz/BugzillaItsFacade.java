@@ -27,6 +27,7 @@ import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
 
 import com.googlesource.gerrit.plugins.hooks.its.ItsFacade;
+import com.j2bugzilla.base.Bug;
 import com.j2bugzilla.base.BugzillaException;
 import com.j2bugzilla.base.ConnectionException;
 
@@ -118,6 +119,16 @@ public class BugzillaItsFacade implements ItsFacade {
       @Override
       public Boolean call() throws Exception {
         return client().getBug(bugId) != null;
+      }});
+  }
+  
+    @Override
+  public String getStatus(final String bugId) throws IOException {
+    return execute(new Callable<String>(){
+      @Override
+      public String call() throws Exception {
+        Bug bug = client().getBug(bugId);
+        return bug != null ? bug.getStatus() : null;
       }});
   }
 
