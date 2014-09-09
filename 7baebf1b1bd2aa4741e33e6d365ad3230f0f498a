@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d065072b_b7b9e203",
+        "filename": "VERSION",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2014-09-09T13:33:26Z",
+      "side": 1,
+      "message": "should update to 2.11-SNAPSHOT",
+      "revId": "7baebf1b1bd2aa4741e33e6d365ad3230f0f498a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "106cff13_1950cf1c",
+        "filename": "lib/BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2014-09-09T13:33:26Z",
+      "side": 1,
+      "message": "should include the version info like here: https://gerrit-review.googlesource.com/#/c/58729/10/lib/gerrit/BUCK",
+      "revId": "7baebf1b1bd2aa4741e33e6d365ad3230f0f498a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "106cff13_d6310421",
+        "filename": "lib/BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2014-09-09T13:33:26Z",
+      "side": 1,
+      "message": "Reference version info from VERSION file.  \n\nVER \u003d PLUGIN_VERSION",
+      "revId": "7baebf1b1bd2aa4741e33e6d365ad3230f0f498a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d065072b_1750961c",
+        "filename": "lib/BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2014-09-09T13:33:26Z",
+      "side": 1,
+      "message": "would need to match the same version as above or removed.",
+      "revId": "7baebf1b1bd2aa4741e33e6d365ad3230f0f498a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d065072b_97b66611",
+        "filename": "lib/gerrit/BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2014-09-09T13:33:26Z",
+      "side": 1,
+      "message": "should be VER\u003dPLUGIN_VER",
+      "revId": "7baebf1b1bd2aa4741e33e6d365ad3230f0f498a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "106cff13_b93efbd0",
+        "filename": "lib/gerrit/BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2014-09-09T13:33:26Z",
+      "side": 1,
+      "message": "should be removed",
+      "revId": "7baebf1b1bd2aa4741e33e6d365ad3230f0f498a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
