@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d065072b_34e3106b",
+        "filename": "BUCK",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2014-09-09T09:45:36Z",
+      "side": 1,
+      "message": "This probably should be removed.",
+      "revId": "d70c563ef1c94bef246cd6391b43f26c48dd173a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
