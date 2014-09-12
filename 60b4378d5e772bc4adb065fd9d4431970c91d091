@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9058ef70_5a40751d",
+        "filename": "src/main/resources/Documentation/config-rulebase-plugin-actions.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2014-09-12T16:38:54Z",
+      "side": 1,
+      "message": "\"sets both the resolution and the status\" ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 17
+      },
+      "revId": "60b4378d5e772bc4adb065fd9d4431970c91d091",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
