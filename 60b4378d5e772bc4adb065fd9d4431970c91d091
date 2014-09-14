@@ -22,6 +22,30 @@
       "revId": "60b4378d5e772bc4adb065fd9d4431970c91d091",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0892b3b_ad6dddd0",
+        "filename": "src/main/resources/Documentation/config-rulebase-plugin-actions.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2014-09-14T21:09:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9058ef70_5a40751d",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 17
+      },
+      "revId": "60b4378d5e772bc4adb065fd9d4431970c91d091",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
