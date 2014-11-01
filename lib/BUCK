@@ -2,8 +2,8 @@ include_defs('//lib/maven.defs')
 
 maven_jar(
   name = 'j2bugzilla',
-  id = 'com.j2bugzilla:j2bugzilla:2.2',
-  sha1 = 'abd2c9290e6e4ec3222c89a99c79d9c5bbc79300',
+  id = 'com.j2bugzilla:j2bugzilla:2.2.1',
+  sha1 = '397e40c85bda1eb0a13bccf3cb7130d8f815290e',
   license = 'Apache2.0',
   deps = [':xmlrpc-client'],
 )
