@@ -22,6 +22,30 @@
       "revId": "43cc0c49f22f283c5cb8f7d2dd767e4a1a1de565",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e46c12f3_3a556115",
+        "filename": "lib/BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2014-12-09T15:29:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e46c12f3_7a5bd94c",
+      "range": {
+        "startLine": 5,
+        "startChar": 34,
+        "endLine": 5,
+        "endChar": 39
+      },
+      "revId": "43cc0c49f22f283c5cb8f7d2dd767e4a1a1de565",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
