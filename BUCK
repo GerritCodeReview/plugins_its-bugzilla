@@ -18,22 +18,19 @@ gerrit_plugin(
 def strip_jar(
     name,
     src,
-    excludes = [],
-    visibility = [],
-  ):
-  name_zip = name + '.zip'
+    excludes):
+  stripped = name + '.zip'
   genrule(
-    name = name_zip,
-    cmd = 'cp $SRCS $OUT && zip -qd $OUT ' + ' '.join(excludes),
-    srcs = [ src ],
-    deps = [ src ],
-    out = name_zip,
-    visibility = visibility,
+    name = stripped,
+    cmd = 'cp $(location %s)' % src + ' $OUT;' +
+      'zip -qd $OUT ' +
+      ' '.join(excludes),
+    out = stripped,
   )
+
   prebuilt_jar(
     name = name,
-    binary_jar = ':' + name_zip,
-    visibility = visibility,
+    binary_jar = ':' + stripped,
   )
 
 strip_jar(
