@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6dfcd7d_02f1ea20",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-02-17T09:04:27Z",
+      "side": 1,
+      "message": "Mention that also its-base must be cloned into the plugins directory.",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "e6791ecd3ad77435b2cc2b55ab20418522bdab91",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d6dfcd7d_42ebf230",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-02-17T09:04:27Z",
+      "side": 1,
+      "message": "At the moment this fails for me with\n\n  BUILD FAILED: No BUCK file plugins/its-bugzilla/BUCK when resolving target //plugins/its-bugzilla:its-bugzilla in context FULLY_QUALIFIED\n\nI can check once more later.",
+      "revId": "e6791ecd3ad77435b2cc2b55ab20418522bdab91",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
