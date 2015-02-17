@@ -57,6 +57,24 @@
       "revId": "e6791ecd3ad77435b2cc2b55ab20418522bdab91",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b8df443_6e204fc7",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-02-17T09:22:33Z",
+      "side": 1,
+      "message": "Damn, I think I really tested without this change... :(",
+      "parentUuid": "d6dfcd7d_62e27654",
+      "revId": "e6791ecd3ad77435b2cc2b55ab20418522bdab91",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
