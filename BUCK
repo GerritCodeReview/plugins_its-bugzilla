@@ -77,6 +77,7 @@ java_test(
   deps = [
     ':its-bugzilla__plugin',
     ':its-bugzilla_tests-utils',
+    ':its-base_stripped',
     '//gerrit-plugin-api:lib',
     '//lib/easymock:easymock',
     '//lib:guava',
