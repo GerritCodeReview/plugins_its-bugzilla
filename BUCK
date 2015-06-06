@@ -3,8 +3,8 @@ gerrit_plugin(
   srcs = glob(['src/main/java/**/*.java']),
   resources = glob(['src/main/resources/**/*']),
   manifest_entries = [
-    'Gerrit-Module: com.googlesource.gerrit.plugins.hooks.bz.BugzillaModule',
-    'Gerrit-InitStep: com.googlesource.gerrit.plugins.hooks.bz.InitBugzilla',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.its.bugzilla.BugzillaModule',
+    'Gerrit-InitStep: com.googlesource.gerrit.plugins.its.bugzilla.InitBugzilla',
     'Gerrit-ReloadMode: reload',
     'Implementation-Title: Bugzilla ITS Plugin',
     'Implementation-URL: https://www.wikimediafoundation.org',

@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-package com.googlesource.gerrit.plugins.hooks.bz;
+package com.googlesource.gerrit.plugins.its.bugzilla;
 
 import static org.easymock.EasyMock.expect;
 
@@ -22,7 +22,9 @@ import com.google.gerrit.server.config.FactoryModule;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+
 import com.googlesource.gerrit.plugins.hooks.testutil.LoggingMockingTestCase;
+import com.googlesource.gerrit.plugins.its.bugzilla.BugzillaItsFacade;
 
 public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
   private Injector injector;

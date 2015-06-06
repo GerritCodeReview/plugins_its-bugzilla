@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.googlesource.gerrit.plugins.hooks.bz;
+package com.googlesource.gerrit.plugins.its.bugzilla;
 
 import java.io.IOException;
 import java.net.URL;
