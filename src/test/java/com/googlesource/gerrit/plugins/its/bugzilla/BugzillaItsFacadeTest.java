@@ -23,7 +23,7 @@ import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import com.googlesource.gerrit.plugins.hooks.testutil.LoggingMockingTestCase;
+import com.googlesource.gerrit.plugins.its.base.testutil.LoggingMockingTestCase;
 import com.googlesource.gerrit.plugins.its.bugzilla.BugzillaItsFacade;
 
 public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
