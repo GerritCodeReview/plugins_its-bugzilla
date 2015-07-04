@@ -17,7 +17,7 @@ package com.googlesource.gerrit.plugins.its.bugzilla;
 import java.util.HashMap;
 import java.util.Set;
 
-import com.googlesource.gerrit.plugins.hooks.its.InvalidTransitionException;
+import com.googlesource.gerrit.plugins.its.base.its.InvalidTransitionException;
 import com.j2bugzilla.base.Bug;
 import com.j2bugzilla.base.BugzillaConnector;
 import com.j2bugzilla.base.BugzillaException;
