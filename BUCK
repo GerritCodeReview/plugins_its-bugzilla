@@ -1,3 +1,5 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
 gerrit_plugin(
   name = 'its-bugzilla',
   srcs = glob(['src/main/java/**/*.java']),
@@ -18,22 +20,18 @@ gerrit_plugin(
 def strip_jar(
     name,
     src,
-    excludes = [],
-    visibility = [],
+    excludes
   ):
   name_zip = name + '.zip'
   genrule(
     name = name_zip,
     cmd = 'cp $SRCS $OUT && zip -qd $OUT ' + ' '.join(excludes),
-    srcs = [ src ],
-    deps = [ src ],
+    srcs = [src],
     out = name_zip,
-    visibility = visibility,
   )
   prebuilt_jar(
     name = name,
     binary_jar = ':' + name_zip,
-    visibility = visibility,
   )
 
 strip_jar(
@@ -52,22 +50,9 @@ java_test(
   srcs = glob(['src/test/java/**/*.java']),
   labels = ['its-bugzilla'],
   source_under_test = [':its-bugzilla__plugin'],
-  deps = [
+  deps = GERRIT_PLUGIN_API + [
     ':its-bugzilla__plugin',
     '//plugins/its-base:its-base_tests-utils',
     ':its-base_stripped',
-    '//gerrit-plugin-api:lib',
-    '//lib/easymock:easymock',
-    '//lib:guava',
-    '//lib/guice:guice',
-    '//lib/jgit:jgit',
-    '//lib:junit',
-    '//lib/log:api',
-    '//lib/log:impl_log4j',
-    '//lib/log:log4j',
-    '//lib/powermock:powermock-api-easymock',
-    '//lib/powermock:powermock-api-support',
-    '//lib/powermock:powermock-core',
-    '//lib/powermock:powermock-module-junit4',
   ],
 )
