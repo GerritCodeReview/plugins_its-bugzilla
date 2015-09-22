@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4997d354_8c46678a",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-09-22T06:20:41Z",
+      "side": 0,
+      "message": "The replacement of \u0027//gerrit-plugin-api:lib\u0027 with GERRIT_PLUGIN_API was needed as preparation to potentially support standalone build. Note, that this variable is overloaded in stanalone build toolchain and points to something different.",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "78c8d63661ecf4d35cf268fe841268d59848d229",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
