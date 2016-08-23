@@ -13,7 +13,7 @@ provides:
 [`set-status-and-resolution`][action-set-status-and-resolution]
 : sets both the status and resolution of the issue
 
-[basic-actions]: config-rulebase-common.html#actions
+[basic-actions]: config-rulebase-common.md#actions
 
 [action-set-resolution]: #action-set-resolution
 ### <a name="action-set-resolution">Action: set-resolution</a>
