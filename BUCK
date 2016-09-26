@@ -1,3 +1,5 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
 gerrit_plugin(
   name = 'its-bugzilla',
   srcs = glob(['src/main/java/**/*.java']),
@@ -50,16 +52,13 @@ java_test(
   name = 'its-bugzilla_tests',
   srcs = glob(['src/test/java/**/*.java']),
   labels = ['its-bugzilla'],
-  source_under_test = [':its-bugzilla__plugin'],
-  deps = [
+  deps = GERRIT_PLUGIN_API + GERRIT_TESTS + [
     ':its-bugzilla__plugin',
     '//plugins/its-base:its-base_tests-utils',
     ':its-base_stripped',
-    '//gerrit-plugin-api:lib',
     '//lib/easymock:easymock',
     '//lib:guava',
     '//lib/guice:guice',
-    '//lib/jgit:jgit',
     '//lib:junit',
     '//lib/log:api',
     '//lib/log:impl_log4j',
