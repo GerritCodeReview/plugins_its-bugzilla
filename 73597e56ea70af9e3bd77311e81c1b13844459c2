@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ebbfe88_c3d9a571",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 10:15:18 AM",
+      "side": 1,
+      "message": "Remove this. It\u0027s defined in gerrit_plugin().",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 66
+      },
+      "revId": "73597e56ea70af9e3bd77311e81c1b13844459c2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "008fb0e1_e5e998e9",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 10:15:18 AM",
+      "side": 1,
+      "message": "This is the default. Remove it here and in all other places.",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 20
+      },
+      "revId": "73597e56ea70af9e3bd77311e81c1b13844459c2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
