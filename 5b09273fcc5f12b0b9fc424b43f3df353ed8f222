@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d9bf714_53e802c6",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 9:47:57 AM",
+      "side": 1,
+      "message": "Plugin name should be specified in manifest file:\n\n  \"Gerrit-PluginName: its-bugzilla\",\n\nI see it is missing in Buck build too, but we should improve things.",
+      "revId": "5b09273fcc5f12b0b9fc424b43f3df353ed8f222",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2d6e10ce_cbab34a1",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 9:47:57 AM",
+      "side": 1,
+      "message": "Too long line. Please wrap it.",
+      "revId": "5b09273fcc5f12b0b9fc424b43f3df353ed8f222",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
