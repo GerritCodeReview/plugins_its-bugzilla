@@ -20,7 +20,7 @@ gerrit_plugin(
     ],
     deps = [
         "//plugins/its-base",
-        "//plugins/its-bugzilla/lib:j2bugzilla",
+        "@j2bugzilla//jar",
     ],
 )
 
