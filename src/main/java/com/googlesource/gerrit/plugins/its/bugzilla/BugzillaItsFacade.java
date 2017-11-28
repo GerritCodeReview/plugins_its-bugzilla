@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
-
+import com.googlesource.gerrit.plugins.its.base.its.InvalidTransitionException;
 import com.googlesource.gerrit.plugins.its.base.its.ItsFacade;
 import com.j2bugzilla.base.BugzillaException;
 import com.j2bugzilla.base.ConnectionException;
@@ -103,7 +103,7 @@ public class BugzillaItsFacade implements ItsFacade {
   }
 
   private void doPerformAction(final String bugId, final String fieldName, final String fieldValue)
-      throws BugzillaException, IOException {
+      throws BugzillaException, IOException, InvalidTransitionException {
     client().performAction(bugId, fieldName.toLowerCase(), fieldValue);
   }
 
