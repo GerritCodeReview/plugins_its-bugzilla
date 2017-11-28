@@ -9,7 +9,6 @@ load(
 gerrit_plugin(
     name = "its-bugzilla",
     srcs = glob(["src/main/java/**/*.java"]),
-    resources = glob(["src/main/resources/**/*"]),
     manifest_entries = [
         "Gerrit-PluginName: its-bugzilla",
         "Gerrit-Module: com.googlesource.gerrit.plugins.its.bugzilla.BugzillaModule",
@@ -18,6 +17,7 @@ gerrit_plugin(
         "Implementation-Title: Bugzilla ITS Plugin",
         "Implementation-URL: https://www.wikimediafoundation.org",
     ],
+    resources = glob(["src/main/resources/**/*"]),
     deps = [
         "//plugins/its-base",
         "@j2bugzilla//jar",
