@@ -28,7 +28,16 @@ junit_tests(
     name = "its_bugzilla_tests",
     srcs = glob(["src/test/java/**/*.java"]),
     tags = ["its-bugzilla"],
-    deps = PLUGIN_DEPS + PLUGIN_TEST_DEPS + [
+    deps = [
+        "its-bugzilla__plugin_test_deps",
+    ],
+)
+
+java_library(
+    name = "its-bugzilla__plugin_test_deps",
+    testonly = 1,
+    visibility = ["//visibility:public"],
+    exports = PLUGIN_DEPS + PLUGIN_TEST_DEPS + [
         ":its-bugzilla__plugin",
         "//plugins/its-base:its-base",
         "//plugins/its-base:its-base_tests-utils",
