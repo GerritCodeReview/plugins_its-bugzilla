@@ -17,21 +17,18 @@ package com.googlesource.gerrit.plugins.its.bugzilla;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.pgm.init.api.AllProjectsConfig;
 import com.google.gerrit.pgm.init.api.AllProjectsNameOnInitProvider;
+import com.google.gerrit.pgm.init.api.ConsoleUI;
 import com.google.gerrit.pgm.init.api.InitFlags;
 import com.google.gerrit.pgm.init.api.Section;
-import com.google.gerrit.pgm.init.api.ConsoleUI;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import com.googlesource.gerrit.plugins.its.base.its.InitIts;
 import com.googlesource.gerrit.plugins.its.base.validation.ItsAssociationPolicy;
 import com.j2bugzilla.base.BugzillaException;
 import com.j2bugzilla.base.ConnectionException;
-
-import org.eclipse.jgit.errors.ConfigInvalidException;
-
 import java.io.IOException;
 import java.util.Arrays;
+import org.eclipse.jgit.errors.ConfigInvalidException;
 
 /** Initialize the GitRepositoryManager configuration section. */
 @Singleton
@@ -46,9 +43,13 @@ class InitBugzilla extends InitIts {
   private String bugzillaPassword;
 
   @Inject
-  InitBugzilla(@PluginName String pluginName, ConsoleUI ui,
-      Section.Factory sections, AllProjectsConfig allProjectsConfig,
-      AllProjectsNameOnInitProvider allProjects, InitFlags flags) {
+  InitBugzilla(
+      @PluginName String pluginName,
+      ConsoleUI ui,
+      Section.Factory sections,
+      AllProjectsConfig allProjectsConfig,
+      AllProjectsNameOnInitProvider allProjects,
+      InitFlags flags) {
     super(pluginName, "Bugzilla", ui, allProjectsConfig, allProjects);
     this.pluginName = pluginName;
     this.sections = sections;
@@ -68,11 +69,14 @@ class InitBugzilla extends InitIts {
       ui.message("A Bugzilla configuration for the 'hooks-bugzilla' plugin was found.\n");
       if (ui.yesno(true, "Copy it for the '%s' plugin?", pluginName)) {
         for (String n : flags.cfg.getNames("bugzilla")) {
-          flags.cfg.setStringList(pluginName, null, n,
-              Arrays.asList(flags.cfg.getStringList("bugzilla", null, n)));
+          flags.cfg.setStringList(
+              pluginName, null, n, Arrays.asList(flags.cfg.getStringList("bugzilla", null, n)));
         }
         for (String n : flags.cfg.getNames(COMMENT_LINK_SECTION, "bugzilla")) {
-          flags.cfg.setStringList(COMMENT_LINK_SECTION, pluginName, n,
+          flags.cfg.setStringList(
+              COMMENT_LINK_SECTION,
+              pluginName,
+              n,
               Arrays.asList(flags.cfg.getStringList(COMMENT_LINK_SECTION, "bugzilla", n)));
         }
 
@@ -92,7 +96,6 @@ class InitBugzilla extends InitIts {
     this.bugzilla = sections.get(pluginName, null);
     this.bugzillaComment = sections.get(COMMENT_LINK_SECTION, pluginName);
 
-
     do {
       enterBugzillaConnectivity();
     } while (bugzillaUrl != null
@@ -103,11 +106,12 @@ class InitBugzilla extends InitIts {
     }
 
     ui.header("Bugzilla issue-tracking association");
-    bugzillaComment.string("Bugzilla bug number regex", "match", "\\([Bb][Uu][Gg][ ]*[1-9][0-9]*\\)");
-    bugzillaComment.set("html",
-        String.format("<a href=\"%s/show_bug.cgi?id=$1\">$1</a>", bugzillaUrl));
-    bugzillaComment.select("Bug number enforced in commit message", "association",
-        ItsAssociationPolicy.SUGGESTED);
+    bugzillaComment.string(
+        "Bugzilla bug number regex", "match", "\\([Bb][Uu][Gg][ ]*[1-9][0-9]*\\)");
+    bugzillaComment.set(
+        "html", String.format("<a href=\"%s/show_bug.cgi?id=$1\">$1</a>", bugzillaUrl));
+    bugzillaComment.select(
+        "Bug number enforced in commit message", "association", ItsAssociationPolicy.SUGGESTED);
   }
 
   public void enterBugzillaConnectivity() {

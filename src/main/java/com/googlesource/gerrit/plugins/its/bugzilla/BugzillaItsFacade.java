@@ -14,14 +14,6 @@
 
 package com.googlesource.gerrit.plugins.its.bugzilla;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.concurrent.Callable;
-
-import org.eclipse.jgit.lib.Config;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.inject.Inject;
@@ -29,6 +21,12 @@ import com.googlesource.gerrit.plugins.its.base.its.InvalidTransitionException;
 import com.googlesource.gerrit.plugins.its.base.its.ItsFacade;
 import com.j2bugzilla.base.BugzillaException;
 import com.j2bugzilla.base.ConnectionException;
+import java.io.IOException;
+import java.net.URL;
+import java.util.concurrent.Callable;
+import org.eclipse.jgit.lib.Config;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BugzillaItsFacade implements ItsFacade {
   private static final String GERRIT_CONFIG_USERNAME = "username";
@@ -45,13 +43,15 @@ public class BugzillaItsFacade implements ItsFacade {
   private BugzillaClient client;
 
   @Inject
-  public BugzillaItsFacade(@PluginName String pluginName,
-      @GerritServerConfig Config cfg) {
+  public BugzillaItsFacade(@PluginName String pluginName, @GerritServerConfig Config cfg) {
     this.pluginName = pluginName;
     try {
       this.gerritConfig = cfg;
-      log.info("Connected to Bugzilla at " + client().getXmlRpcUrl()
-          + ", reported version is " + client().getServerVersion());
+      log.info(
+          "Connected to Bugzilla at "
+              + client().getXmlRpcUrl()
+              + ", reported version is "
+              + client().getServerVersion());
     } catch (Exception ex) {
       log.warn("Bugzilla is currently not available", ex);
     }
@@ -59,47 +59,51 @@ public class BugzillaItsFacade implements ItsFacade {
 
   @Override
   public String healthCheck(final Check check) throws IOException {
-      return execute(new Callable<String>(){
-        @Override
-        public String call() throws Exception {
-          if (check.equals(Check.ACCESS))
-            return healthCheckAccess();
-          else
-            return healthCheckSysinfo();
-        }});
+    return execute(
+        new Callable<String>() {
+          @Override
+          public String call() throws Exception {
+            if (check.equals(Check.ACCESS)) return healthCheckAccess();
+            else return healthCheckSysinfo();
+          }
+        });
   }
 
   @Override
   public void addComment(final String bugId, final String comment) throws IOException {
 
-    execute(new Callable<String>(){
-      @Override
-      public String call() throws Exception {
-        log.debug("Adding comment " + comment + " to bug " + bugId);
-        client().addComment(bugId, comment);
-        log.debug("Added comment " + comment + " to bug " + bugId);
-        return bugId;
-      }});
+    execute(
+        new Callable<String>() {
+          @Override
+          public String call() throws Exception {
+            log.debug("Adding comment " + comment + " to bug " + bugId);
+            client().addComment(bugId, comment);
+            log.debug("Added comment " + comment + " to bug " + bugId);
+            return bugId;
+          }
+        });
   }
 
   @Override
   public void addRelatedLink(final String issueKey, final URL relatedUrl, String description)
       throws IOException {
-    addComment(issueKey, "Related URL: " + createLinkForWebui(relatedUrl.toExternalForm(), description));
+    addComment(
+        issueKey, "Related URL: " + createLinkForWebui(relatedUrl.toExternalForm(), description));
   }
 
   @Override
-  public void performAction(final String bugId, final String actionString)
-      throws IOException {
+  public void performAction(final String bugId, final String actionString) throws IOException {
 
-    execute(new Callable<String>(){
-      @Override
-      public String call() throws Exception {
-        String actionName = actionString.substring(0, actionString.indexOf(" "));
-        String actionValue = actionString.substring(actionString.indexOf(" ") + 1);
-        doPerformAction(bugId, actionName, actionValue);
-        return bugId;
-      }});
+    execute(
+        new Callable<String>() {
+          @Override
+          public String call() throws Exception {
+            String actionName = actionString.substring(0, actionString.indexOf(" "));
+            String actionValue = actionString.substring(actionString.indexOf(" ") + 1);
+            doPerformAction(bugId, actionName, actionValue);
+            return bugId;
+          }
+        });
   }
 
   private void doPerformAction(final String bugId, final String fieldName, final String fieldValue)
@@ -109,11 +113,13 @@ public class BugzillaItsFacade implements ItsFacade {
 
   @Override
   public boolean exists(final String bugId) throws IOException {
-    return execute(new Callable<Boolean>(){
-      @Override
-      public Boolean call() throws Exception {
-        return client().getBug(bugId) != null;
-      }});
+    return execute(
+        new Callable<Boolean>() {
+          @Override
+          public Boolean call() throws Exception {
+            return client().getBug(bugId) != null;
+          }
+        });
   }
 
   public void logout() {
@@ -123,8 +129,7 @@ public class BugzillaItsFacade implements ItsFacade {
   public void logout(boolean quiet) {
     try {
       client().logout();
-    }
-    catch (Exception ex) {
+    } catch (Exception ex) {
       if (!quiet) log.error("I was unable to logout", ex);
     }
   }
@@ -138,8 +143,7 @@ public class BugzillaItsFacade implements ItsFacade {
       String token = client.login(getUsername(), getPassword());
       log.info("Connected to " + getUrl() + " as " + token);
       return token;
-    }
-    catch (Exception ex) {
+    } catch (Exception ex) {
       if (!quiet) {
         log.error("I was unable to login", ex);
       }
@@ -156,8 +160,7 @@ public class BugzillaItsFacade implements ItsFacade {
         client = new BugzillaClient(getUrl());
         log.debug("Autenthicating as user " + getUsername());
       } catch (Exception ex) {
-        log.info("Unable to connect to " + getUrl() + " as "
-            + getUsername());
+        log.info("Unable to connect to " + getUrl() + " as " + getUsername());
         throw new IOException(ex);
       }
 
@@ -170,7 +173,7 @@ public class BugzillaItsFacade implements ItsFacade {
   private <P> P execute(Callable<P> function) throws IOException {
 
     int attempt = 0;
-    while(true) {
+    while (true) {
       try {
         return function.call();
       } catch (Exception ex) {
@@ -181,10 +184,8 @@ public class BugzillaItsFacade implements ItsFacade {
           continue;
         }
 
-        if (ex instanceof IOException)
-          throw ((IOException)ex);
-        else
-          throw new IOException(ex);
+        if (ex instanceof IOException) throw ((IOException) ex);
+        else throw new IOException(ex);
       }
     }
   }
@@ -194,30 +195,25 @@ public class BugzillaItsFacade implements ItsFacade {
   }
 
   private String getPassword() {
-    final String pass =
-        gerritConfig.getString(pluginName, null,
-            GERRIT_CONFIG_PASSWORD);
+    final String pass = gerritConfig.getString(pluginName, null, GERRIT_CONFIG_PASSWORD);
     return pass;
   }
 
   private String getUsername() {
-    final String user =
-        gerritConfig.getString(pluginName, null,
-            GERRIT_CONFIG_USERNAME);
+    final String user = gerritConfig.getString(pluginName, null, GERRIT_CONFIG_USERNAME);
     return user;
   }
 
   private String getUrl() {
-    final String url =
-        gerritConfig.getString(pluginName, null, GERRIT_CONFIG_URL);
+    final String url = gerritConfig.getString(pluginName, null, GERRIT_CONFIG_URL);
     return url;
   }
 
   @Override
   public String createLinkForWebui(String url, String text) {
     String ret = url;
-    if (text != null && ! text.equals(url)) {
-        ret += " (" + text + ")";
+    if (text != null && !text.equals(url)) {
+      ret += " (" + text + ")";
     }
     return ret;
   }
@@ -226,13 +222,18 @@ public class BugzillaItsFacade implements ItsFacade {
     BugzillaClient client = new BugzillaClient(getUrl());
     client.login(getUsername(), getPassword());
     client.logout();
-    final String result = "{\"status\"=\"ok\",\"username\"=\""+getUsername()+"\"}";
+    final String result = "{\"status\"=\"ok\",\"username\"=\"" + getUsername() + "\"}";
     log.debug("Healtheck on access result: {}", result);
     return result;
   }
 
   private String healthCheckSysinfo() throws BugzillaException, IOException {
-    final String result = "{\"status\"=\"ok\",\"system\"=\"Bugzilla\",\"version\"=\""+client().getServerVersion()+"\",\"url\"=\""+getUrl()+"\"}";
+    final String result =
+        "{\"status\"=\"ok\",\"system\"=\"Bugzilla\",\"version\"=\""
+            + client().getServerVersion()
+            + "\",\"url\"=\""
+            + getUrl()
+            + "\"}";
     log.debug("Healtheck on sysinfo result: {}", result);
     return result;
   }
