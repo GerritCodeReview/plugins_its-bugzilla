@@ -34,7 +34,7 @@ public class BugzillaClient {
 
   private final BugzillaConnector connector;
   private final String xmlRpcUrl;
-  private static HashMap<Fields, Set<String>> legalFieldValues = new HashMap<Fields, Set<String>>();
+  private static HashMap<Fields, Set<String>> legalFieldValues = new HashMap<>();
 
   public BugzillaClient(final String baseUrl) throws ConnectionException {
     this(baseUrl, "/xmlrpc.cgi");
