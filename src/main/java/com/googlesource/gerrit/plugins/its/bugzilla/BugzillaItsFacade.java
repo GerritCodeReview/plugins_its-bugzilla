@@ -63,8 +63,10 @@ public class BugzillaItsFacade implements ItsFacade {
         new Callable<String>() {
           @Override
           public String call() throws Exception {
-            if (check.equals(Check.ACCESS)) return healthCheckAccess();
-            else return healthCheckSysinfo();
+            if (check.equals(Check.ACCESS)) {
+              return healthCheckAccess();
+            }
+            return healthCheckSysinfo();
           }
         });
   }
@@ -184,8 +186,10 @@ public class BugzillaItsFacade implements ItsFacade {
           continue;
         }
 
-        if (ex instanceof IOException) throw ((IOException) ex);
-        else throw new IOException(ex);
+        if (ex instanceof IOException) {
+          throw ((IOException) ex);
+        }
+        throw new IOException(ex);
       }
     }
   }
