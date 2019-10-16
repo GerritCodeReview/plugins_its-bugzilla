@@ -23,7 +23,6 @@ import com.googlesource.gerrit.plugins.its.base.ItsHookModule;
 import com.googlesource.gerrit.plugins.its.base.its.ItsFacade;
 import com.googlesource.gerrit.plugins.its.base.its.ItsFacadeFactory;
 import com.googlesource.gerrit.plugins.its.base.its.SingleItsServer;
-
 import org.eclipse.jgit.lib.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
