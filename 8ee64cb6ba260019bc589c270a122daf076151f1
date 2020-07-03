@@ -103,6 +103,24 @@
       "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d86d1542_df60f7c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-07-03T09:48:28Z",
+      "side": 1,
+      "message": "\u003e I thought Christian was the maintainer of the its-bugzilla plugin, but the list of maintainers is empty :-O\n\nIn early 2016, I stepped back from maintainership of its-* to give them a more\nstraight-forward government.\nThat happen in private email between us two.\n\n\u003e @Christian what do you think about removing the mocks altogether?\n\nIf I was to write the tests today, I\u0027d probably not use the mocks.\nBut I don\u0027t see them as particularly bad, and since davido was kind enough to\nprepare them, I\u0027d probably simply take that and be glad that it is fixed :-)",
+      "parentUuid": "7ebe7dfb_cd94f852",
+      "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
