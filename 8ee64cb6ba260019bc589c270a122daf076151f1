@@ -121,6 +121,24 @@
       "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ea6f36c_6d9c2398",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-03T09:51:47Z",
+      "side": 1,
+      "message": "I believe we have a problem in the ACL of the its-* plugins, I will try to sort that out. At the moment, all groups are empty and include the its-base group, which is incorrect IMHO.\n\nIf you are happy to keep on maintaining its-bugzilla, you are more than welcome to continue. Also on its-base, you are welcome to continue to be maintainer, as you know it from the inside out.",
+      "parentUuid": "d86d1542_df60f7c4",
+      "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
