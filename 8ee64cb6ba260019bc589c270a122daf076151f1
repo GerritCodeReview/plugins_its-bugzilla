@@ -50,6 +50,41 @@
       "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d8d5a516_37d3a98a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-07-03T07:03:22Z",
+      "side": 1,
+      "message": "Verified thta the plugin can be built and all tests are passing. I have not tested this plugin on gerrit site with Bugzilla integration.",
+      "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a9e4523_be0e52e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-07-03T07:03:22Z",
+      "side": 1,
+      "message": "This is a blocking change, as plugin cannot be built atm, and sites that depend on it cannot migrate to latest gerrit release. Submit it as is, and do a follow-up eventually?",
+      "parentUuid": "7ccbfc20_d796ad10",
+      "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
