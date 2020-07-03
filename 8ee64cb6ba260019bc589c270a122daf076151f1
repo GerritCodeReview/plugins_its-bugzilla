@@ -175,6 +175,24 @@
       "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cba43514_eff2c82a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-03T12:43:12Z",
+      "side": 1,
+      "message": "Mocks are not evil per-se, but if they can be avoided with minimal effort, then it\u0027s definitely better.\n\nIn [1] if you notice the problem is project hierarchy bit \u0027getFromProjectConfigWithInheritance\u0027 that is a bit tricky to build, you can\u0027t just do it with a method annotation.\n\nFor a simple plugin config instead, we have test annotations to inject them automatically without having to use mocks.\n\nDoes that make sense?",
+      "parentUuid": "d3c36ed6_df70cd84",
+      "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
