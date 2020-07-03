@@ -13,7 +13,8 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.its.bugzilla;
 
-import static org.easymock.EasyMock.expect;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.extensions.config.FactoryModule;
@@ -22,15 +23,19 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.googlesource.gerrit.plugins.its.base.testutil.LoggingMockingTestCase;
 import org.eclipse.jgit.lib.Config;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
   private Injector injector;
   private Config serverConfig;
 
+  @Test
   public void testCreateLinkForWebUiPlain() {
     mockUnconnectableBugzilla();
-
-    replayMocks();
 
     BugzillaItsFacade itsFacade = createBugzillaItsFacade();
     String actual = itsFacade.createLinkForWebui("Test-Url", "Test-Text");
@@ -42,10 +47,9 @@ public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
     assertUnconnectableBugzilla();
   }
 
+  @Test
   public void testCreateLinkForWebUiUrlEqualsText() {
     mockUnconnectableBugzilla();
-
-    replayMocks();
 
     BugzillaItsFacade itsFacade = createBugzillaItsFacade();
     String actual = itsFacade.createLinkForWebui("Test-Url", "Test-Url");
@@ -56,10 +60,9 @@ public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
     assertUnconnectableBugzilla();
   }
 
+  @Test
   public void testCreateLinkForWebUiUrlEqualsNull() {
     mockUnconnectableBugzilla();
-
-    replayMocks();
 
     BugzillaItsFacade itsFacade = createBugzillaItsFacade();
     String actual = itsFacade.createLinkForWebui("Test-Url", null);
@@ -75,9 +78,8 @@ public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
   }
 
   private void mockUnconnectableBugzilla() {
-    expect(serverConfig.getString("its-bugzilla", null, "url")).andReturn("<no-url>").anyTimes();
-    expect(serverConfig.getString("its-bugzilla", null, "username")).andReturn("none").anyTimes();
-    expect(serverConfig.getString("its-bugzilla", null, "password")).andReturn("none").anyTimes();
+    when(serverConfig.getString("its-bugzilla", null, "url")).thenReturn("<no-url>");
+    when(serverConfig.getString("its-bugzilla", null, "username")).thenReturn("none");
   }
 
   private void assertUnconnectableBugzilla() {
@@ -87,6 +89,7 @@ public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
   }
 
   @Override
+  @Before
   public void setUp() throws Exception {
     super.setUp();
 
@@ -96,7 +99,7 @@ public class BugzillaItsFacadeTest extends LoggingMockingTestCase {
   private class TestModule extends FactoryModule {
     @Override
     protected void configure() {
-      serverConfig = createMock(Config.class);
+      serverConfig = mock(Config.class);
       bind(Config.class).annotatedWith(GerritServerConfig.class).toInstance(serverConfig);
       bind(String.class).annotatedWith(PluginName.class).toInstance("its-bugzilla");
     }
