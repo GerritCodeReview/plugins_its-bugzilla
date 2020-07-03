@@ -33,6 +33,23 @@
       "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ebe7dfb_cd94f852",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-03T06:31:03Z",
+      "side": 1,
+      "message": "I thought Christian was the maintainer of the its-bugzilla plugin, but the list of maintainers is empty :-O\n\n@Christian what do you think about removing the mocks altogether?",
+      "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
