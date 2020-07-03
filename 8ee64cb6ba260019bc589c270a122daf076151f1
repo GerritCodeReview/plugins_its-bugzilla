@@ -139,6 +139,24 @@
       "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "599acab0_b18dacfd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-07-03T12:26:30Z",
+      "side": 1,
+      "message": "Thanks, Luca. But I think its-* is in better hands with you.\n\nWhile you are clearly focused on Gerrit, I\u0027ll have to roam around from\njob to job. And doing Gerrit work really is the exception for me these\ndays. Besides work and family, there is far too little time for me to be\nproductive and effective around Gerrit.\n\nThe two of us, often approach problems from different angles. While I\u0027m\nconvinced that this is per-se fruitful, our different angles might also\nbe confusing for potential contributors.\n\nHence, I think it\u0027s better if the its-* repos come with a clear leadership:\nyour leadership. That way, contributors don\u0027t get mixed messages. :-)",
+      "parentUuid": "3ea6f36c_6d9c2398",
+      "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
