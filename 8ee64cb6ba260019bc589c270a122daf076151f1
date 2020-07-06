@@ -193,6 +193,24 @@
       "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "95ec5f97_9796dfe6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-07-06T05:43:59Z",
+      "side": 1,
+      "message": "\u003e For a simple plugin config instead, we have test annotations to inject them automatically without having to use mocks.\n\nAre you talking about:\n\n  @GerritConfig(name \u003d COMMENT_SECTION + \".association\", value \u003d \"SUGGESTED\")\n\nhere, but it only works, if you boot a full blown gerrit server, using LightweightPluginDaemonTest base class and providing plugin binding annotations, e.g.: \n  \n  @TestPlugin(name \u003d \"its-jira\", sysModule \u003d \"com.googlesource.gerrit.plugins.its.jira.JiraModule\")\n  public class JiraITTest extends LightweightPluginDaemonTest \n\nMoreover, in JiraITTest: [1], it\u0027s even using both: booten full gerrit server and mocking of Jira calls:\n\n  wireMockRule.givenThat(\n      WireMock.get(urlEqualTo(BASE_PREFIX + ISSUE_CLASS_PREFIX + JIRA_ISSUE)).willReturn(ok()));\n\n[1] https://gerrit.googlesource.com/plugins/its-jira/+/d19268747da8a6de596663e6cc41447f62e927fc/src/test/java/com/googlesource/gerrit/plugins/its/jira/JiraITTest.java#102",
+      "parentUuid": "cba43514_eff2c82a",
+      "revId": "8ee64cb6ba260019bc589c270a122daf076151f1",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
